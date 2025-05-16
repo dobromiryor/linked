@@ -1,0 +1,17 @@
+export const COMPANY_NAME_SUFFIXES = [
+  "Solutions",
+  "Corp",
+  "Inc",
+  "Group",
+  "Tech",
+  "Systems",
+  "Labs",
+  "Dynamics",
+  "Enterprises",
+  "Holdings",
+  "Innovations",
+  "Ventures",
+  "Global",
+  "Industries",
+  "Partners",
+];
