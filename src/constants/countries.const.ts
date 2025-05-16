@@ -12,7 +12,7 @@ import {
   NL_FIRST_NAMES,
   PT_FIRST_NAMES,
   SE_FIRST_NAMES,
-} from "./first-names.const";
+} from "@/constants/first-names.const";
 import {
   CH_LAST_NAMES,
   CN_LAST_NAMES,
@@ -27,7 +27,7 @@ import {
   NL_LAST_NAMES,
   PT_LAST_NAMES,
   SE_LAST_NAMES,
-} from "./last-names.const";
+} from "@/constants/last-names.const";
 
 interface Country {
   name: string;
