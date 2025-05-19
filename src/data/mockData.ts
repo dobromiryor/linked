@@ -10,9 +10,10 @@ import { INDUSTRIES } from "@/constants/industries.const";
 import { LAST_YEAR } from "@/constants/last-year.const";
 import { MAX_REVENUE } from "@/constants/max-revenue.const";
 import { MIN_REVENUE } from "@/constants/min-revenue.const";
-import type { Company } from "@/interfaces/company.interface";
-import type { CompanyDetails } from "@/interfaces/compnay-details.interface";
-import type { FinancialData } from "@/interfaces/financial-data.interface";
+import { NUMBER_OF_COMPANIES } from "@/constants/number-of-companies.const";
+import type { Company, CompanyMockData } from "@/interfaces/company.interface";
+import type { CompanyDetailsMockData } from "@/interfaces/compnay-details.interface";
+import type { FinancialDataMockData } from "@/interfaces/financial-data.interface";
 
 let companyIdCounter = 0;
 const incrementCompanyIdCounter = () => ++companyIdCounter;
@@ -23,11 +24,11 @@ const getRandomElement = <T>(array: readonly T[]) =>
 const getRandomNumber = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const companies: Company[] = [];
+export const companies: CompanyMockData[] = [];
 
-export const companyDetails: CompanyDetails[] = [];
+export const companyDetails: CompanyDetailsMockData[] = [];
 
-export const financialData: FinancialData[] = [];
+export const financialData: FinancialDataMockData[] = [];
 
 /* Generate 100 companies */
 for (let i = 0; i < 100; i++) {

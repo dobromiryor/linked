@@ -1,4 +1,4 @@
-export interface FinancialData {
+export interface FinancialDataMockData {
   companyId: number;
   year: number;
   revenue: number;
