@@ -74,7 +74,19 @@ for (let i = 0; i < NUMBER_OF_COMPANIES; i++) {
   }
 }
 
-// TODO: remove console.log
-console.log("companies", companies);
-console.log("companyDetails", companyDetails);
-console.log("financialData", financialData);
+export const getJoinedCompanyData = (): Company[] =>
+  companies.map((company) => {
+    const details = companyDetails.find(
+      (detail) => detail.companyId === company.id
+    )!;
+
+    const finances = financialData.filter(
+      (data) => data.companyId === company.id
+    );
+
+    return {
+      ...company,
+      companyDetails: details,
+      financialData: finances,
+    };
+  });
