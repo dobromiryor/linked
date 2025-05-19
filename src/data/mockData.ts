@@ -24,11 +24,9 @@ const getRandomElement = <T>(array: readonly T[]) =>
 const getRandomNumber = (min: number, max: number) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-export const companies: CompanyMockData[] = [];
-
-export const companyDetails: CompanyDetailsMockData[] = [];
-
-export const financialData: FinancialDataMockData[] = [];
+const companies: CompanyMockData[] = [];
+const companyDetails: CompanyDetailsMockData[] = [];
+const financialData: FinancialDataMockData[] = [];
 
 /* Generate companies */
 for (let i = 0; i < NUMBER_OF_COMPANIES; i++) {
