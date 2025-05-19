@@ -5,3 +5,5 @@ export const COMPANY_SIZES = [
   "Large",
   "Enterprise",
 ] as const;
+
+export const COMPANY_SIZE_FILTER = ["all", ...COMPANY_SIZES] as const;

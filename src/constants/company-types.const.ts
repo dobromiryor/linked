@@ -5,3 +5,5 @@ export const COMPANY_TYPES = [
   "Subsidiary",
   "Startup",
 ] as const;
+
+export const COMPANY_TYPE_FILTER = ["all", ...COMPANY_TYPES] as const;

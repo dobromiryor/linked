@@ -15,3 +15,5 @@ export const INDUSTRIES = [
   "Logistics",
   "Aerospace",
 ] as const;
+
+export const INDUSTRY_FILTER = ["all", ...INDUSTRIES] as const;
