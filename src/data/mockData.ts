@@ -30,8 +30,8 @@ export const companyDetails: CompanyDetailsMockData[] = [];
 
 export const financialData: FinancialDataMockData[] = [];
 
-/* Generate 100 companies */
-for (let i = 0; i < 100; i++) {
+/* Generate companies */
+for (let i = 0; i < NUMBER_OF_COMPANIES; i++) {
   const companyId = incrementCompanyIdCounter();
   const foundedYear = getRandomNumber(FOUNDED_YEAR_MIN, FOUNDED_YEAR_MAX);
   const companyCountry = getRandomElement(COUNTRIES);
