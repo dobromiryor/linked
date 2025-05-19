@@ -122,6 +122,18 @@ export const COUNTRIES: Country[] = [
     lastNames: PT_LAST_NAMES,
   },
   {
+    name: "Mexico",
+    cities: ["Mexico City", "Guadalajara", "Monterrey", "Puebla", "Tijuana"],
+    firstNames: ES_FIRST_NAMES,
+    lastNames: ES_LAST_NAMES,
+  },
+  {
+    name: "Chile",
+    cities: ["Santiago", "Concepcion", "Valparaiso", "Vienna", "Temuco"],
+    firstNames: ES_FIRST_NAMES,
+    lastNames: ES_LAST_NAMES,
+  },
+  {
     name: "Japan",
     cities: ["Tokyo", "Osaka", "Fukuoka", "Nagoya", "Kobe"],
     firstNames: JP_FIRST_NAMES,
