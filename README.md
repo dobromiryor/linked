@@ -25,7 +25,7 @@ npm run dev
 
 ## Usage & UI
 
-1. Start the app: `npm run dev`
+1. Start the app locally using `npm run dev` or visit this [link](https://dobromiryor.github.io/linked).
 2. Type at least 3 characters in the search bar.
 3. Matching companies display in a list with key data:
    - Basic info (name, industry, country)
