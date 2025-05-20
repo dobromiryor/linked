@@ -9,6 +9,11 @@ export const EN_FIRST_NAMES = [
   "Sophia",
   "Benjamin",
   "Isabella",
+  "Elijah",
+  "Charlotte",
+  "Ava",
+  "Ethan",
+  "Mia",
 ];
 
 export const SE_FIRST_NAMES = [
@@ -22,6 +27,8 @@ export const SE_FIRST_NAMES = [
   "Hugo",
   "Liam",
   "Adam",
+  "Sigrid",
+  "Albin",
 ];
 
 export const NL_FIRST_NAMES = [
@@ -35,6 +42,8 @@ export const NL_FIRST_NAMES = [
   "Liam",
   "Dirk",
   "Jan",
+  "Thijs",
+  "Maud",
 ];
 
 export const FR_FIRST_NAMES = [
@@ -48,6 +57,9 @@ export const FR_FIRST_NAMES = [
   "Olivia",
   "Noah",
   "Isabella",
+  "Camille",
+  "Hugo",
+  "Chloé",
 ];
 
 export const DE_FIRST_NAMES = [
@@ -61,6 +73,9 @@ export const DE_FIRST_NAMES = [
   "Olivia",
   "Noah",
   "Isabella",
+  "Leon",
+  "Mia",
+  "Lina",
 ];
 
 export const IT_FIRST_NAMES = [
@@ -74,6 +89,8 @@ export const IT_FIRST_NAMES = [
   "Giacomina",
   "Vittoria",
   "Tommaso",
+  "Alessandro",
+  "Chiara",
 ];
 
 export const CH_FIRST_NAMES = [
@@ -93,6 +110,8 @@ export const ES_FIRST_NAMES = [
   "Isabel",
   "Ricardo",
   "Valentina",
+  "Carmen",
+  "Sergio",
 ];
 
 export const PT_FIRST_NAMES = ES_FIRST_NAMES;
@@ -104,6 +123,8 @@ export const IN_FIRST_NAMES = [
   "Sunita",
   "Raj",
   "Suman",
+  "Anika",
+  "Vijay",
 ];
 
 export const JP_FIRST_NAMES = [
@@ -116,6 +137,8 @@ export const JP_FIRST_NAMES = [
   "Yoshito",
   "Yoshio",
   "Tatsuo",
+  "Haruto",
+  "Yui",
 ];
 
 export const KR_FIRST_NAMES = [
@@ -129,6 +152,8 @@ export const KR_FIRST_NAMES = [
   "Cho",
   "Moon",
   "Yang",
+  "Seo",
+  "Ji",
 ];
 
 export const CN_FIRST_NAMES = [
@@ -142,4 +167,6 @@ export const CN_FIRST_NAMES = [
   "Xiao",
   "Wei",
   "Yi",
+  "Yang",
+  "Xue",
 ];

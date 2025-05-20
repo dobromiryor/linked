@@ -19,6 +19,9 @@ export const EN_LAST_NAMES = [
   "Martinez",
   "Robinson",
   "Clark",
+  "Wright",
+  "Lopez",
+  "Hill",
 ];
 
 export const SE_LAST_NAMES = [
@@ -32,6 +35,8 @@ export const SE_LAST_NAMES = [
   "Hansson",
   "Johansson",
   "Karlsson",
+  "Lindberg",
+  "Berg",
 ];
 
 export const NL_LAST_NAMES = [
@@ -47,6 +52,8 @@ export const NL_LAST_NAMES = [
   "Timmerman",
   "van Zutphen",
   "van Zijl",
+  "de Jong",
+  "Jansen",
 ];
 
 export const DE_LAST_NAMES = [
@@ -58,8 +65,8 @@ export const DE_LAST_NAMES = [
   "Scholz",
   "Schuster",
   "Schulz",
-  "Schulze",
-  "Schulz",
+  "Weber",
+  "Wagner",
 ];
 
 export const FR_LAST_NAMES = [
@@ -73,6 +80,8 @@ export const FR_LAST_NAMES = [
   "Muller",
   "Rouge",
   "Girard",
+  "Laurent",
+  "Noel",
 ];
 
 export const IT_LAST_NAMES = [
@@ -85,6 +94,8 @@ export const IT_LAST_NAMES = [
   "Ferrari",
   "Flamigni",
   "Carrara",
+  "Esposito",
+  "Russo",
 ];
 
 export const CH_LAST_NAMES = [
@@ -103,6 +114,8 @@ export const ES_LAST_NAMES = [
   "Lopez",
   "Estevez",
   "Rivera",
+  "Torres",
+  "Ramirez",
 ];
 
 export const PT_LAST_NAMES = [
@@ -114,6 +127,8 @@ export const PT_LAST_NAMES = [
   "Barros",
   "Dias",
   "Goncalves",
+  "Teixeira",
+  "Santos",
 ];
 
 export const IN_LAST_NAMES = [
@@ -127,6 +142,8 @@ export const IN_LAST_NAMES = [
   "Gupta",
   "Jain",
   "Kumar",
+  "Shah",
+  "Mehta",
 ];
 
 export const JP_LAST_NAMES = [
@@ -140,6 +157,8 @@ export const JP_LAST_NAMES = [
   "Hara",
   "Miyamoto",
   "Kondo",
+  "Ito",
+  "Yamada",
 ];
 
 export const KR_LAST_NAMES = [
@@ -150,6 +169,9 @@ export const KR_LAST_NAMES = [
   "Cho",
   "Moon",
   "Yang",
+  "Lim",
+  "Jung",
+  "Kang",
 ];
 
 export const CN_LAST_NAMES = [
@@ -163,4 +185,6 @@ export const CN_LAST_NAMES = [
   "Li",
   "Wang",
   "Zhang",
+  "Liu",
+  "Chen",
 ];
