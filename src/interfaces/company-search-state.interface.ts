@@ -24,6 +24,7 @@ export interface CompanySearchState {
   /* Data */
   filteredCompanies: Company[];
   paginatedCompanies: Company[];
+  selectedCompany: Company | null;
 
   /* Search and filter state */
   searchQuery: string;
@@ -46,4 +47,5 @@ export interface CompanySearchState {
   setSorting: (sorting: SortingConfig) => void;
   setCurrentPage: (currentPage: number) => void;
   setItemsPerPage: (itemsPerPage: ItemsPerPage) => void;
+  setSelectedCompany: (selectedCompany: Company | null) => void;
 }

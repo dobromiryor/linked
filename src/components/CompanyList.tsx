@@ -1,6 +1,7 @@
 import { CompanyCard } from "@/components/CompanyCard";
 import type { Company } from "@/interfaces/company.interface";
 import { cn } from "@/lib/utils";
+import { useCompanyStore } from "@/store/company.store";
 
 export const CompanyList = ({
   companies,
@@ -9,6 +10,10 @@ export const CompanyList = ({
   companies: Company[];
   isLoading: boolean;
 }) => {
+  const setSelectedCompany = useCompanyStore(
+    (state) => state.setSelectedCompany
+  );
+
   return (
     <div
       className={cn(
@@ -17,7 +22,11 @@ export const CompanyList = ({
       )}
     >
       {companies.map((company) => (
-        <CompanyCard key={company.id} company={company} onClick={() => {}} />
+        <CompanyCard
+          key={company.id}
+          company={company}
+          onClick={() => setSelectedCompany(company)}
+        />
       ))}
     </div>
   );

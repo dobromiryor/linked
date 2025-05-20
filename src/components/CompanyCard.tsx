@@ -20,7 +20,10 @@ interface CompanyCardProps {
 
 export const CompanyCard = ({ company, onClick }: CompanyCardProps) => {
   return (
-    <Card onClick={onClick} className="justify-between">
+    <Card
+      onClick={onClick}
+      className="justify-between hover:border-muted-foreground hover:cursor-pointer transition-all"
+    >
       <CardHeader>
         <CardTitle className="flex justify-between items-center text-lg truncate">
           <p className="truncate">{company.name}</p>

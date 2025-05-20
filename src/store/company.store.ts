@@ -19,6 +19,7 @@ export const useCompanyStore = create<CompanySearchState>((set, get) => ({
 
   filteredCompanies: [],
   paginatedCompanies: [],
+  selectedCompany: null,
 
   searchQuery: "",
   filters: {
@@ -36,32 +37,27 @@ export const useCompanyStore = create<CompanySearchState>((set, get) => ({
   itemsPerPage: ITEMS_PER_PAGE[0],
   totalPages: 1,
 
-  setSearchQuery: (searchQuery: string) => {
+  setSearchQuery: (searchQuery) =>
     set({
       searchQuery,
       isLoading: true,
       currentPage: 1,
-    });
-  },
+    }),
 
-  setFilter: (filter, value) => {
+  setFilter: (filter, value) =>
     set({
       filters: { ...get().filters, [filter]: value },
       isLoading: true,
-    });
-  },
+    }),
 
-  setSorting: (sorting) => {
-    set({ sorting, isLoading: true });
-  },
+  setSorting: (sorting) => set({ sorting, isLoading: true }),
 
-  setCurrentPage: (currentPage) => {
-    set({ currentPage, isLoading: true });
-  },
+  setCurrentPage: (currentPage) => set({ currentPage, isLoading: true }),
 
-  setItemsPerPage: (itemsPerPage) => {
-    set({ itemsPerPage, currentPage: 1, isLoading: true });
-  },
+  setItemsPerPage: (itemsPerPage) =>
+    set({ itemsPerPage, currentPage: 1, isLoading: true }),
+
+  setSelectedCompany: (selectedCompany) => set({ selectedCompany }),
 }));
 
 const applySearchAndFilters = (overrides: Partial<CompanySearchState>) =>

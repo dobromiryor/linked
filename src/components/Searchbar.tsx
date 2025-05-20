@@ -14,10 +14,11 @@ export const Searchbar = () => {
 
   const searchInputRef = useRef<HTMLInputElement>(null);
 
+  const selectedCompany = useCompanyStore((state) => state.selectedCompany);
   const setSearchQuery = useCompanyStore((state) => state.setSearchQuery);
 
   const handleClear = () => {
-    setSearchQuery("");
+    setValue("");
     searchInputRef.current?.focus();
   };
 
@@ -54,7 +55,12 @@ export const Searchbar = () => {
   }, [value, setSearchQuery]);
 
   return (
-    <div className="relative flex-1">
+    <div
+      className={cn(
+        "relative flex-1 transition-all transition-discrete starting:opacity-0 starting:-translate-y-4",
+        selectedCompany && "opacity-0 -translate-y-4 pointer-events-none"
+      )}
+    >
       <Search className="absolute left-2 top-1/2 -translate-y-1/2 size-4 text-muted-foreground pointer-events-none" />
 
       <Input
@@ -65,6 +71,8 @@ export const Searchbar = () => {
         onChange={(e) => setValue(e.target.value)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        disabled={!!selectedCompany}
+        aria-hidden={!!selectedCompany}
       />
       {value !== "" && (
         <button
