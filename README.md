@@ -48,12 +48,12 @@ npm run dev
 ## Search Behavior
 
 - Search triggers automatically when the user types at least 3 characters.
-- Searches across all fields: `name`, `country`, `industry`, `founded_year`, `year`, `revenue`, `net_income`, `company_type`, `size`, `ceo_name`, `headquarters`.
+- Searches across all fields: `name`, `country`, `industry`, `foundedYear`, `year`, `revenue`, `netIncome`, `companyType`, `size`, `ceoName`, `headquarters`.
 - Debounced input prevents excessive worker calls.
 
 ## Extensions
 
-- **Filtering & Sorting**: Added filters by `industry` and `company_type`, and sort by `revenue` to improve data exploration.
+- **Filtering & Sorting**: Added filters by `industry`, `companySize`, and `companyType`, and sort by `name`, `revenue`, `foundedYear` to improve data exploration.
 - **Pagination**: Added pagination to improve performance and user experience.
 - **Company Detail**: Added company detail view to provide more information about the company.
 
