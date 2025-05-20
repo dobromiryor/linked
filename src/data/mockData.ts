@@ -15,6 +15,8 @@ import type { Company, CompanyMockData } from "@/interfaces/company.interface";
 import type { CompanyDetailsMockData } from "@/interfaces/compnay-details.interface";
 import type { FinancialDataMockData } from "@/interfaces/financial-data.interface";
 
+let initialized = false;
+
 let companyIdCounter = 0;
 const incrementCompanyIdCounter = () => ++companyIdCounter;
 
@@ -28,52 +30,81 @@ const companies: CompanyMockData[] = [];
 const companyDetails: CompanyDetailsMockData[] = [];
 const financialData: FinancialDataMockData[] = [];
 
-/* Generate companies */
-for (let i = 0; i < NUMBER_OF_COMPANIES; i++) {
-  const companyId = incrementCompanyIdCounter();
-  const foundedYear = getRandomNumber(FOUNDED_YEAR_MIN, FOUNDED_YEAR_MAX);
-  const companyCountry = getRandomElement(COUNTRIES);
-  const companyCity = getRandomElement(companyCountry.cities);
+const usedCompanyNames = new Set<string>();
 
-  companies.push({
-    id: companyId,
-    name: `${getRandomElement(COMPANY_NAME_PREFIXES)} ${getRandomElement(
+const maxUniqueCompanyNames =
+  COMPANY_NAME_PREFIXES.length * COMPANY_NAME_SUFFIXES.length;
+
+const getUniqueCompanyName = () => {
+  if (usedCompanyNames.size >= maxUniqueCompanyNames) {
+    return `${getRandomElement(COMPANY_NAME_PREFIXES)} ${getRandomElement(
       COMPANY_NAME_SUFFIXES
-    )}`,
-    country: companyCountry.name,
-    industry: getRandomElement(INDUSTRIES),
-    foundedYear,
-  });
-
-  companyDetails.push({
-    companyId,
-    companyType: getRandomElement(COMPANY_TYPES),
-    size: getRandomElement(COMPANY_SIZES),
-    ceoName: `${getRandomElement(companyCountry.firstNames)} ${getRandomElement(
-      companyCountry.lastNames
-    )}`,
-    headquarters: companyCity,
-  });
-
-  /* Generate financial data for each company from founded year to current year */
-  for (let year = foundedYear; year <= LAST_YEAR; year++) {
-    const revenue = getRandomNumber(MIN_REVENUE, MAX_REVENUE);
-    const netIncome = getRandomNumber(
-      Math.floor(revenue * -INCOME_VARIATION),
-      Math.floor(revenue * INCOME_VARIATION)
-    );
-
-    financialData.push({
-      companyId,
-      year,
-      revenue,
-      netIncome,
-    });
+    )}`;
   }
-}
 
-export const getJoinedCompanyData = (): Company[] =>
-  companies.map((company) => {
+  let name: string;
+  do {
+    name = `${getRandomElement(COMPANY_NAME_PREFIXES)} ${getRandomElement(
+      COMPANY_NAME_SUFFIXES
+    )}`;
+  } while (usedCompanyNames.has(name));
+
+  usedCompanyNames.add(name);
+
+  return name;
+};
+
+const generateCompanies = () => {
+  if (initialized) return;
+
+  initialized = true;
+
+  for (let i = 0; i < NUMBER_OF_COMPANIES; i++) {
+    const companyId = incrementCompanyIdCounter();
+    const foundedYear = getRandomNumber(FOUNDED_YEAR_MIN, FOUNDED_YEAR_MAX);
+    const companyCountry = getRandomElement(COUNTRIES);
+    const companyCity = getRandomElement(companyCountry.cities);
+
+    companies.push({
+      id: companyId,
+      name: getUniqueCompanyName(),
+      country: companyCountry.name,
+      industry: getRandomElement(INDUSTRIES),
+      foundedYear,
+    });
+
+    companyDetails.push({
+      companyId,
+      companyType: getRandomElement(COMPANY_TYPES),
+      size: getRandomElement(COMPANY_SIZES),
+      ceoName: `${getRandomElement(
+        companyCountry.firstNames
+      )} ${getRandomElement(companyCountry.lastNames)}`,
+      headquarters: companyCity,
+    });
+
+    /* Generate financial data for each company from founded year to current year */
+    for (let year = foundedYear; year <= LAST_YEAR; year++) {
+      const revenue = getRandomNumber(MIN_REVENUE, MAX_REVENUE);
+      const netIncome = getRandomNumber(
+        Math.floor(revenue * -INCOME_VARIATION),
+        Math.floor(revenue * INCOME_VARIATION)
+      );
+
+      financialData.push({
+        companyId,
+        year,
+        revenue,
+        netIncome,
+      });
+    }
+  }
+};
+
+export const getJoinedCompanyData = (): Company[] => {
+  if (!initialized) generateCompanies();
+
+  return companies.map((company) => {
     const details = companyDetails.find(
       (detail) => detail.companyId === company.id
     )!;
@@ -88,3 +119,4 @@ export const getJoinedCompanyData = (): Company[] =>
       financialData: finances,
     };
   });
+};
