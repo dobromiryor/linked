@@ -30,6 +30,7 @@ export const Pagination = () => {
     const itemsPerPage = Number.parseInt(value) as ItemsPerPage;
 
     if (ITEMS_PER_PAGE.includes(itemsPerPage)) {
+      setCurrentPage(1);
       setItemsPerPage(itemsPerPage);
       debouncedPostCompanyWorkerMessage({
         type: "pagination",
@@ -49,8 +50,8 @@ export const Pagination = () => {
         type: "pagination",
         payload: {
           filteredCompanies,
+          currentPage: page,
           itemsPerPage,
-          currentPage,
         },
       });
     }
