@@ -58,7 +58,7 @@ export const FilterBar = () => {
             handleFilterChange("industryFilter", value)
           }
         >
-          <SelectTrigger className="flex-1 w-full col-span-2 md:col-span-1">
+          <SelectTrigger className="flex-1 w-full col-span-2 md:col-span-1 data-[size=default]:h-8 md:data-[size=default]:h-9">
             <SelectValue placeholder="Filter by industry" />
           </SelectTrigger>
           <SelectContent>
@@ -76,7 +76,7 @@ export const FilterBar = () => {
             handleFilterChange("companyTypeFilter", value)
           }
         >
-          <SelectTrigger className="flex-1 w-full col-span-2 md:col-span-1">
+          <SelectTrigger className="flex-1 w-full col-span-2 md:col-span-1 data-[size=default]:h-8 md:data-[size=default]:h-9">
             <SelectValue placeholder="Filter by company type" />
           </SelectTrigger>
           <SelectContent>
@@ -97,7 +97,7 @@ export const FilterBar = () => {
             handleFilterChange("companySizeFilter", value)
           }
         >
-          <SelectTrigger className="flex-1 w-full col-span-2 md:col-span-1">
+          <SelectTrigger className="flex-1 w-full col-span-2 md:col-span-1 data-[size=default]:h-8 md:data-[size=default]:h-9">
             <SelectValue placeholder="Filter by company size" />
           </SelectTrigger>
           <SelectContent>
@@ -118,7 +118,7 @@ export const FilterBar = () => {
             handleSortChange(value, sorting.sortOrder)
           }
         >
-          <SelectTrigger className="flex-1 w-full">
+          <SelectTrigger className="flex-1 w-full data-[size=default]:h-8 md:data-[size=default]:h-9">
             <SelectValue placeholder="Sort by" />
           </SelectTrigger>
           <SelectContent>
@@ -139,7 +139,7 @@ export const FilterBar = () => {
             handleSortChange(sorting.sortBy, value)
           }
         >
-          <SelectTrigger className="flex-1 w-full">
+          <SelectTrigger className="flex-1 w-full data-[size=default]:h-8 md:data-[size=default]:h-9">
             <SelectValue placeholder="Sort order" />
           </SelectTrigger>
           <SelectContent>
